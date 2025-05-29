@@ -17,6 +17,7 @@ public class nuevacaminata : MonoBehaviour
     private int cont = 0;
     int hidrogeno = 0;
     public GameObject Camaraplayer;
+    public GameObject Cilindro;
     
 
     void Start()
@@ -93,6 +94,7 @@ public class nuevacaminata : MonoBehaviour
             {
                 Debug.Log("Has recogido todos los hidrógenos");
                 textoHidrogeno.color = Color.green; // Cambiar el color del texto a verde
+                Cilindro.SetActive(true); // Activar el cilindro
             }
         }
     }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Hidrogeno
   - player
+  - PuntoUnion
   layers:
   - Default
   - TransparentFX
