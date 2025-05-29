@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Move : MonoBehaviour
 {
-    public float speed = 5f;           // Velocidad normal
+    public float speed = 100f;           // Velocidad normal
     public float sprintMultiplier = 2f; // Multiplicador de velocidad al correr
-    public float jumpForce = 7f;      // Fuerza del salto
+    public float jumpForce = 15f;      // Fuerza del salto
     public LayerMask groundLayer;     // Capa para detectar el suelo
 
     private Rigidbody rb;
