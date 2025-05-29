@@ -15,8 +15,8 @@ public class Timerp : MonoBehaviour
     [SerializeField] TextMeshPro HidrogenosRecogidos;
     private float remainingTime;
     private Color originalColor;
-    private bool gameEnded = false; // Para que no pasen mï¿½ltiples llamados
-    private Vector3 wallOffset = new Vector3(0, 1.5f, 0.5f); // Ajuste de posiciï¿½n sobre la pared
+    private bool gameEnded = false; // Para que no pasen múltiples llamados
+    private Vector3 wallOffset = new Vector3(0, 1.5f, 0.5f); // Ajuste de posición sobre la pared
 
     void Start()
     {
@@ -40,10 +40,10 @@ public class Timerp : MonoBehaviour
         else
         {
             remainingTime = 0;
-            gameEnded = true; // Marcar que el juego terminï¿½
+            gameEnded = true; // Marcar que el juego terminó
             timerText.text = "Se acabo el tiempo!";
             worldTimerText.text = "Se acabo el tiempo!";
-            EndGame(); // Llamar a la funciï¿½n que termina el juego
+            EndGame(); // Llamar a la función que termina el juego
             return;
         }
 
@@ -55,7 +55,7 @@ public class Timerp : MonoBehaviour
         worldTimerText.text = timeString; // Actualizar texto en la pared
        
 
-        UpdateWorldTimerPosition(); // Ajustar posiciï¿½n
+        UpdateWorldTimerPosition(); // Ajustar posición
     }
 
     void UpdateWorldTimerPosition()
@@ -68,26 +68,26 @@ public class Timerp : MonoBehaviour
 
             bool hasWallRight = Physics.Raycast(rayOrigin, rayDirectionRight, out hitRight, 2f, laberintoLayer);
 
-            Vector3 targetPos = worldTimerText.transform.position; // Mantener la ultima posiciï¿½n vï¿½lida
+            Vector3 targetPos = worldTimerText.transform.position; // Mantener la ultima posición válida
             Quaternion targetRotation = worldTimerText.transform.rotation;
 
             if (hasWallRight)
             {
-                //  Angulo de visiï¿½n segun la normal de la pared
+                //  Angulo de visión segun la normal de la pared
                 float dotProduct = Vector3.Dot(player.forward, -hitRight.normal);
 
-                //  Si el jugador no estï¿½ mirando la pared de frente, colocar el texto a la derecha
-                if (dotProduct < 0.85f) // 0.85f es el punto antes de que estï¿½ casi de frente
+                //  Si el jugador no está mirando la pared de frente, colocar el texto a la derecha
+                if (dotProduct < 0.85f) // 0.85f es el punto antes de que esté casi de frente
                 {
                     Vector3 wallOffset = hitRight.normal * 0.05f;
                     targetPos = hitRight.point + wallOffset;
                     targetPos.y = player.position.y + 0.4f;
                     targetRotation = Quaternion.LookRotation(-hitRight.normal);
                 }
-                //  Si el jugador sigue girando mï¿½s allï¿½, mantener el texto en su ï¿½ltima posiciï¿½n vï¿½lida
+                //  Si el jugador sigue girando más allá, mantener el texto en su última posición válida
             }
 
-            // Posiciï¿½n y rotaciï¿½n corregidas
+            // Posición y rotación corregidas
             worldTimerText.transform.position = targetPos;
             worldTimerText.transform.rotation = targetRotation;
 

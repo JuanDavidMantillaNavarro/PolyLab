@@ -1,6 +1,5 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI; // Importar el espacio de nombres UnityEngine.UI para usar la clase Text
+using UnityEngine.UI; // Add this line
 
 public class nuevacaminata : MonoBehaviour
 {
@@ -9,7 +8,7 @@ public class nuevacaminata : MonoBehaviour
     //public float jumpForce = 5f;
     public float gravity = -9.81f;
     public float mouseSensitivity = 100f;
-    public TextMeshProUGUI textoHidrogeno; // Cambia a TextMeshProUGUI para usar el componente de texto de TextMesh Pro
+    public Text textoHidrogeno;
     private CharacterController controller;
     private Transform cameraTransform;
     private Vector3 velocity;
@@ -33,6 +32,7 @@ public class nuevacaminata : MonoBehaviour
     {
         HandleMovement();
         HandleMouseLook();
+        //HandleJump();
 
         // Camara
         if (Input.GetKeyDown(KeyCode.E))
@@ -97,5 +97,13 @@ public class nuevacaminata : MonoBehaviour
         }
     }
 
-    
+    /*
+    void HandleJump()
+    {
+        if (isGrounded && Input.GetButtonDown("Jump"))
+        {
+            velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
+        }
+    }
+    */
 }

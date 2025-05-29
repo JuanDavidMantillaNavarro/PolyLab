@@ -5,12 +5,12 @@ TagManager:
   serializedVersion: 3
   tags:
   - Hidrogeno
-  - player
+  - PuntoUnion
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Laberinto
   - Water
   - UI
   - 
