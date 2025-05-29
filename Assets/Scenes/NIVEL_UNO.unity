@@ -2985,7 +2985,7 @@ MonoBehaviour:
   walkSpeed: 3
   runSpeed: 5
   gravity: -9.81
-  mouseSensitivity: 70
+  mouseSensitivity: 150
   textoHidrogeno: {fileID: 1752535094}
   Camaraplayer: {fileID: 373678956}
   Cilindro: {fileID: 1674321566}
