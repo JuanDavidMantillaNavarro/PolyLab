@@ -109,13 +109,14 @@ public class nuevacaminata : MonoBehaviour
         // Recoger hidrógenos
         if (other.gameObject.CompareTag("Hidrogeno"))
         {
+            Debug.Log("HOLA");
             audioSource.Play();
             other.gameObject.SetActive(false);
-            hidrogeno = hidrogeno + 1;
+            hidrogeno++;
             textoHidrogeno.text = "Hidrogenos: " + hidrogeno;
             if (hidrogeno == 6)
             {
-
+                
                 Debug.Log("Has recogido todos los hidrógenos");
                 textoHidrogeno.color = Color.green; // Cambiar el color del texto a verde
                 Cilindro.SetActive(true); // Activar el cilindro

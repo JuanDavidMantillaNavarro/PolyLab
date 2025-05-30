@@ -22,7 +22,7 @@ public class GameOverController : MonoBehaviour
         escalaOriginalReintentar = botonReintentar.transform.localScale;
         escalaOriginalMenu = botonMenu.transform.localScale;
 
-        // Añadir efectos a botones
+        // Aï¿½adir efectos a botones
         AddButtonEvents(botonReintentar, escalaOriginalReintentar);
         AddButtonEvents(botonMenu, escalaOriginalMenu);
 
@@ -31,12 +31,12 @@ public class GameOverController : MonoBehaviour
 
     void ReintentarJuego()
     {
-        SceneManager.LoadScene("EscenaJuego"); // Cambia por tu escena
+        SceneManager.LoadScene("mainMenuScene"); // Cambia por tu escena
     }
 
     void VolverAlMenu()
     {
-        SceneManager.LoadScene("MenuPrincipal"); // Cambia por tu escena
+        SceneManager.LoadScene("instruccionesEnlaces"); // Cambia por tu escena
     }
 
     IEnumerator AnimarTextoGameOver()
