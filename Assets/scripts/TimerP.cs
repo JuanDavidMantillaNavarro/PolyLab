@@ -9,7 +9,7 @@ public class Timerp : MonoBehaviour
     [SerializeField] TextMeshProUGUI timerText; // UI en pantalla
     [SerializeField] TextMeshPro worldTimerText; // Texto en la pared
     [SerializeField] Transform player;
-    [SerializeField] float initialTime = 60f;
+    [SerializeField] float initialTime = 150f;
     [SerializeField] string gameOverSceneName = "GameOver"; // Escena de game over
     [SerializeField] LayerMask laberintoLayer; // Capa para las paredes del laberinto
     [SerializeField] TextMeshPro HidrogenosRecogidos;
