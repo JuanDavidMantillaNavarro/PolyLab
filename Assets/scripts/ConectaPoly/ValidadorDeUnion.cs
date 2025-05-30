@@ -4,12 +4,17 @@ public class ValidadorDeUnion : MonoBehaviour
 {
     private bool unido = false;
 
+    void Update()
+    {
+        
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Hidrogeno"))
         {
             Debug.Log("¡Monomero correcto!");
-
+            
             // 🔊 Reproducir sonido cuando se conecta correctamente
             GetComponent<AudioSource>()?.Play();
 

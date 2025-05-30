@@ -550,6 +550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd246ff381e68747a70f860bfa957ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Ganaste: instruccionesEnlaces
 --- !u!54 &392170607
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -916,6 +917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd246ff381e68747a70f860bfa957ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Ganaste: instruccionesEnlaces
 --- !u!54 &649122657
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1200,6 +1202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd246ff381e68747a70f860bfa957ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Ganaste: instruccionesEnlaces
 --- !u!54 &824481985
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1336,7 +1339,7 @@ Transform:
   m_GameObject: {fileID: 887358372}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1043, y: 0.8654, z: 0.371}
+  m_LocalPosition: {x: -1.02, y: 0.8654, z: 0.371}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1807,7 +1810,7 @@ Transform:
   m_GameObject: {fileID: 1462802393}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.226, y: 0.8654, z: -1.8027}
+  m_LocalPosition: {x: -1.02, y: 0.8654, z: -1.8027}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1948,6 +1951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd246ff381e68747a70f860bfa957ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Ganaste: instruccionesEnlaces
 --- !u!54 &1678238158
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2013,6 +2017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd246ff381e68747a70f860bfa957ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Ganaste: instruccionesEnlaces
 --- !u!54 &1837889552
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2150,6 +2155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd246ff381e68747a70f860bfa957ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Ganaste: instruccionesEnlaces
 --- !u!54 &2111990917
 Rigidbody:
   m_ObjectHideFlags: 0
