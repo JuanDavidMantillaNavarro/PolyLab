@@ -550,7 +550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd246ff381e68747a70f860bfa957ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ganaste: instruccionesEnlaces
+  Ganaste: Ganaste
 --- !u!54 &392170607
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -917,7 +917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd246ff381e68747a70f860bfa957ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ganaste: instruccionesEnlaces
+  Ganaste: Ganaste
 --- !u!54 &649122657
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1202,7 +1202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd246ff381e68747a70f860bfa957ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ganaste: instruccionesEnlaces
+  Ganaste: Ganaste
 --- !u!54 &824481985
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1951,7 +1951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd246ff381e68747a70f860bfa957ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ganaste: instruccionesEnlaces
+  Ganaste: Ganaste
 --- !u!54 &1678238158
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2017,7 +2017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd246ff381e68747a70f860bfa957ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ganaste: instruccionesEnlaces
+  Ganaste: Ganaste
 --- !u!54 &1837889552
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2155,7 +2155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd246ff381e68747a70f860bfa957ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ganaste: instruccionesEnlaces
+  Ganaste: Ganaste
 --- !u!54 &2111990917
 Rigidbody:
   m_ObjectHideFlags: 0
