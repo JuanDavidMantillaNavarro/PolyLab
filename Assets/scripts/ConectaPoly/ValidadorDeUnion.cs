@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ValidadorDeUnion : MonoBehaviour
 {
@@ -8,7 +8,10 @@ public class ValidadorDeUnion : MonoBehaviour
     {
         if (other.CompareTag("Hidrogeno"))
         {
-            Debug.Log("�Monomero correcto!");
+            Debug.Log("¡Monomero correcto!");
+
+            // 🔊 Reproducir sonido cuando se conecta correctamente
+            GetComponent<AudioSource>()?.Play();
 
             // Pegar al punto exacto
             other.transform.position = transform.position;
@@ -20,9 +23,7 @@ public class ValidadorDeUnion : MonoBehaviour
                 telekinesis.Unir();
             }
 
-            
-            //gameObject.SetActive(false); para que solo se pueda un solo hidrogeno en el enlace
+            // gameObject.SetActive(false); // para que solo se pueda un solo hidrogeno en el enlace
         }
     }
-
 }
