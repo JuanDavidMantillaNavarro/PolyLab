@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Jobs;
 
 public class TelekinesisZY : MonoBehaviour
 {
@@ -8,10 +9,14 @@ public class TelekinesisZY : MonoBehaviour
     private float scrollSpeed = 2f;
     private float xDepth;
     private bool unido = false; // si ya se unio, entonces no se mueve más
-
+    Rigidbody rb;
+    Quaternion inicio;
     void Start()
     {
         cam = Camera.main;
+        rb = GetComponent<Rigidbody>();
+        rb.isKinematic = false;
+        inicio = transform.rotation;
     }
 
     void Update()
@@ -39,6 +44,7 @@ public class TelekinesisZY : MonoBehaviour
             worldPos.x = xDepth;
 
             transform.position = Vector3.Lerp(transform.position, worldPos, Time.deltaTime * moveSpeed);
+            rb.isKinematic = true;
         }
 
         // Rueda del mouse para mover en eje X (profundidad)
@@ -48,13 +54,17 @@ public class TelekinesisZY : MonoBehaviour
             if (scroll != 0f)
             {
                 xDepth += scroll * scrollSpeed;
+
             }
+            rb.isKinematic = true;
         }
+
 
         // Soltar al soltar clic
         if (Input.GetMouseButtonUp(0))
         {
             isSelected = false;
+            rb.isKinematic = false;
         }
     }
 
@@ -63,5 +73,7 @@ public class TelekinesisZY : MonoBehaviour
     {
         unido = true;
         isSelected = false;
+        rb.isKinematic = true;
+        transform.rotation = inicio;
     }
 }
