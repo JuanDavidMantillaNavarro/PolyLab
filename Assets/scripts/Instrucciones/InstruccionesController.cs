@@ -34,7 +34,7 @@ public class InstruccionesController : MonoBehaviour
 
     void VolverAlMenu()
     {
-        SceneManager.LoadScene("MenuPrincipal"); 
+        SceneManager.LoadScene("mainMenuScene"); 
     }
 
     void AddButtonEffects(Button button, Vector3 escalaOriginal)
