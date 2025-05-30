@@ -37,7 +37,7 @@ public class TelekinesisZY : MonoBehaviour
     {
         if (cont >= hidrogenos.Length && hidrogenos.Length > 0)
         {
-            SceneManager.LoadScene(Ganaste);
+            SceneManager.LoadScene("Ganaste");
         }
 
         if (unido) return;
