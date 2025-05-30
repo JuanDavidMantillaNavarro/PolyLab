@@ -1956,7 +1956,7 @@ MonoBehaviour:
   worldTimerText: {fileID: 940732040}
   player: {fileID: 1797836710}
   initialTime: 150
-  gameOverSceneName: GameOver
+  gameOverSceneName: GameOverScene
   laberintoLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -3733,7 +3733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac7f76d826e85a44a9bd9942b0b1403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreEscena: ConectaPoly
+  nombreEscena: EnlacesInstrucciones
 --- !u!54 &1674321572
 Rigidbody:
   m_ObjectHideFlags: 0
