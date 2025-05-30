@@ -13,17 +13,24 @@ public class nuevacaminata : MonoBehaviour
     private CharacterController controller;
     private Transform cameraTransform;
     private Vector3 velocity;
-    private bool isGrounded;
+    private bool isGrounded, CamMapa, CamMapaBloqueada;
     private int cont = 0;
+    public float tiempoMapa = 30f;
+    private float tiempoRestante;
     int hidrogeno = 0;
     public GameObject Camaraplayer;
+    public GameObject CamaraMapa;
     public GameObject Cilindro;
-    
+
+    public TextMeshProUGUI TimerMapa;
+
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
         cameraTransform = Camera.main.transform;
+
+        tiempoRestante = tiempoMapa;
 
         // Bloquear y ocultar el cursor
         Cursor.lockState = CursorLockMode.Locked;
@@ -32,15 +39,22 @@ public class nuevacaminata : MonoBehaviour
 
     void Update()
     {
-        HandleMovement();
-        HandleMouseLook();
 
+        if (Camaraplayer.activeSelf) // solo mover cámara si está activa la 1ª persona
+        {
+            HandleMouseLook();
+            HandleMovement();
+            CamMapa = false;
+        }
         // Camara
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && CamMapaBloqueada != true)
         {
             ActivateCamara1p(cont % 2 == 1);
             cont++;
+            CamMapa = true;
         }
+
+        ControlarTimerCamaraMapa();
     }
 
     void HandleMovement()
@@ -80,6 +94,10 @@ public class nuevacaminata : MonoBehaviour
     public void ActivateCamara1p(bool active)
     {
         Camaraplayer.SetActive(active);
+        if (!active)
+        {
+            CamaraMapa.transform.localEulerAngles = new Vector3(90f, 0f, 0f);
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -99,5 +117,25 @@ public class nuevacaminata : MonoBehaviour
         }
     }
 
+    void ControlarTimerCamaraMapa()
+    {
+
+
+        if (CamMapa && tiempoRestante > 0)
+        {
+            tiempoRestante -= Time.deltaTime;
+            //Debug.Log("Tiempo restante: " + Mathf.CeilToInt(tiempoRestante));
+            TimerMapa.text = "Tiempo de mapa: " + Mathf.CeilToInt(tiempoRestante) + "s";
+        }
+
+        if (tiempoRestante <= 0)
+        {
+            //Debug.Log("¡Se acabó el tiempo de la cámara del mapa!");
+            // Aquí puedes ejecutar una acción si el tiempo llegó a 0
+            CamMapaBloqueada = true;
+            ActivateCamara1p(cont % 2 == 1);
+        }
+
+    }
     
 }
