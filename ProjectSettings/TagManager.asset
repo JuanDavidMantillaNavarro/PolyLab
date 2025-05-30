@@ -7,11 +7,12 @@ TagManager:
   - Hidrogeno
   - player
   - PuntoUnion
+  - Pared
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Pared
   - Water
   - UI
   - 

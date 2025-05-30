@@ -9,14 +9,14 @@ public class Timerp : MonoBehaviour
     [SerializeField] TextMeshProUGUI timerText; // UI en pantalla
     [SerializeField] TextMeshPro worldTimerText; // Texto en la pared
     [SerializeField] Transform player;
-    [SerializeField] float initialTime = 60f;
+    [SerializeField] float initialTime = 150f;
     [SerializeField] string gameOverSceneName = "GameOver"; // Escena de game over
     [SerializeField] LayerMask laberintoLayer; // Capa para las paredes del laberinto
     [SerializeField] TextMeshPro HidrogenosRecogidos;
     private float remainingTime;
     private Color originalColor;
     private bool gameEnded = false; // Para que no pasen m�ltiples llamados
-    private Vector3 wallOffset = new Vector3(0, 1.5f, 0.5f); // Ajuste de posici�n sobre la pared
+    private Vector3 wallOffset = new Vector3(0, 1.2f, 0.5f); // Ajuste de posici�n sobre la pared
 
     void Start()
     {
@@ -34,14 +34,14 @@ public class Timerp : MonoBehaviour
 
             if (remainingTime < 10)
             {
-                timerText.color = Color.red;
+                worldTimerText.color = Color.red;
             }
         }
         else
         {
             remainingTime = 0;
             gameEnded = true; // Marcar que el juego termin�
-            timerText.text = "Se acabo el tiempo!";
+            //timerText.text = "Se acabo el tiempo!";
             worldTimerText.text = "Se acabo el tiempo!";
             EndGame(); // Llamar a la funci�n que termina el juego
             return;
@@ -51,7 +51,7 @@ public class Timerp : MonoBehaviour
         int seconds = Mathf.FloorToInt(remainingTime % 60);
         string timeString = string.Format("{0:00}:{1:00}", minutes, seconds);
 
-        timerText.text = timeString;
+        //timerText.text = timeString;
         worldTimerText.text = timeString; // Actualizar texto en la pared
        
 
@@ -79,9 +79,9 @@ public class Timerp : MonoBehaviour
                 //  Si el jugador no est� mirando la pared de frente, colocar el texto a la derecha
                 if (dotProduct < 0.85f) // 0.85f es el punto antes de que est� casi de frente
                 {
-                    Vector3 wallOffset = hitRight.normal * 0.05f;
+                    Vector3 wallOffset = hitRight.normal * 0.02f + player.forward * 0.3f;
                     targetPos = hitRight.point + wallOffset;
-                    targetPos.y = player.position.y + 0.4f;
+                    targetPos.y = player.position.y + 0.1f;
                     targetRotation = Quaternion.LookRotation(-hitRight.normal);
                 }
                 //  Si el jugador sigue girando m�s all�, mantener el texto en su �ltima posici�n v�lida
@@ -92,8 +92,8 @@ public class Timerp : MonoBehaviour
             worldTimerText.transform.rotation = targetRotation;
 
         }
-        HidrogenosRecogidos.transform.position = worldTimerText.transform.position + Vector3.down * 0.25f;
-        HidrogenosRecogidos.transform.rotation = worldTimerText.transform.rotation;
+        //HidrogenosRecogidos.transform.position = worldTimerText.transform.position + Vector3.down * 0.25f;
+        //HidrogenosRecogidos.transform.rotation = worldTimerText.transform.rotation;
     }
 
 
@@ -112,7 +112,7 @@ public class Timerp : MonoBehaviour
     public void ResetTimer()
     {
         remainingTime = initialTime;
-        timerText.color = originalColor;
+        worldTimerText.color = originalColor;
         gameEnded = false;
     }
 }
